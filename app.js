@@ -1,6 +1,15 @@
-let name = {
-    add: function nam() {
-        console.log("hello form the js code")
-    }
+let x = 1;
+let time;
+function setime() {
+    document.getElementsByTagName("input")[1].value = x;
+    x++;
 }
-console.log(name.add)
+function get() {
+    time = window.setInterval(setime, 0.1)
+}
+function drop() {
+    window.clearInterval(time);
+    let second = x / 1000;
+    document.getElementsByTagName("span")[0].innerText = second;
+    x = 1;
+}
